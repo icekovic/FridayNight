@@ -1,4 +1,0 @@
-﻿This code creates model classes from database table. It should be executed in Package Manager Console.
-
-Scaffold-DbContext "Data Source=localhost;Initial Catalog=FridayNight;User ID=sa;Password=!v@n" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
-Microsoft.EntityFrameworkCore.SqlServer i Microsoft.EntityFrameworkCore.SqlServer.Design should be installed
