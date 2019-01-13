@@ -3,20 +3,27 @@
 @{
 }
 
-<h1>Categories</h1>
+<h1 class="text-center">Places to go</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var category in Model.Categories)
-        {
+<form method="post">
+    <table class="table thead-dark">
+        <thread>
             <tr>
-                <td>@Html.DisplayFor(m => category.Name)</td>
-            </tr>           
-        }
-    </tbody>
-</table>
+                <th>Categories</th>
+                <th>Places</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach (var category in Model.Categories)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>
+                        @*<a asp-page="./Index" asp-route-id="@place.Idcategory"></a>
+                        <button type="submit" asp-route-id="@place.Idcategory">@place.Name</button>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

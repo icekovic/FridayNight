@@ -28,5 +28,21 @@ namespace FridayNight.Repository
 
             return categories;
         }
+
+        public List<PlaceToGo> GetPlacesToGo()
+        {
+            List<PlaceToGo> placesToGo = new List<PlaceToGo>();
+
+            using (FridayNightContext context = new FridayNightContext())
+            {
+                var places = context.PlaceToGo;
+                foreach (PlaceToGo place in places)
+                {
+                    placesToGo.Add(place);
+                }
+            }
+
+            return placesToGo;
+        }
     }
 }
