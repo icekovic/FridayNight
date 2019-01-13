@@ -1,0 +1,22 @@
+﻿@page
+@model FridayNight.Pages.Places.IndexModel
+@{
+}
+
+<h1>Categories</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var category in Model.Categories)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => category.Name)</td>
+            </tr>           
+        }
+    </tbody>
+</table>
