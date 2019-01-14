@@ -13,8 +13,10 @@ namespace FridayNight.Pages.Places
     public class IndexModel : PageModel
     {
         private PlacesRepository repo = new PlacesRepository();
-        public List<Category> Categories { get; set; }
-        public List<PlaceToGo> PlacesToGo { get; set; }
+        //public List<SelectListItem> CategoriesSelectList { get; set; }
+        public Category Category { get; set; }
+        public SelectList CategoriesSelectList { get; set; }
+        private List<Category> Categories { get; set; }
 
         public void OnGet()
         {
@@ -22,16 +24,18 @@ namespace FridayNight.Pages.Places
             //ShowPlacesToGo();
         }
 
-        private List<Category> ShowCategories()
+        private void ShowCategories()
         {
             Categories = repo.GetAllCategories();
-            return Categories;
-        }
+            CategoriesSelectList = new SelectList(Categories, "Idcategory", "Name");
 
-        private List<PlaceToGo> ShowPlacesToGo()
-        {
-            PlacesToGo = repo.GetPlacesToGo();
-            return PlacesToGo;
+            //foreach(Category category in Categories)
+            //{
+            //    CategoriesSelectList = new List<SelectListItem>()
+            //    {
+            //        new SelectListItem { Value = category.Idcategory.ToString(), Text = category.Name}
+            //    };
+            //}
         }
     }
 }

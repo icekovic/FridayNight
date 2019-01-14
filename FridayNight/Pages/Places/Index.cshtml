@@ -14,16 +14,18 @@
             </tr>
         </thread>
         <tbody>
-            @foreach (var category in Model.Categories)
+            @*@foreach (var category in Model.CategoriesSelectList)
             {
                 <tr>
-                    <td>@category.Name</td>
-                    <td>
-                        @*<a asp-page="./Index" asp-route-id="@place.Idcategory"></a>
-                        <button type="submit" asp-route-id="@place.Idcategory">@place.Name</button>*@
-                    </td>
+                    <td>@category.Text</td>
                 </tr>
-            }
+            }*@
+            <tr>
+                <td>
+                    <select asp-for="Category.Idcategory" class="form-control" asp-items="@Model.CategoriesSelectList">
+                    </select>
+                </td>
+            </tr>
         </tbody>
     </table>
 </form>
