@@ -9,6 +9,6 @@ namespace FridayNight.Repository
     public interface IPlacesRepository
     {
         List<Category> GetAllCategories();
-        List<PlaceToGo> GetPlacesToGo();
+        List<PlaceToGo> GetPlacesToGo(int CategoryId);
     }
 }
