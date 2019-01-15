@@ -15,17 +15,22 @@
         </thread>
         <tbody>
             @*@foreach (var category in Model.CategoriesSelectList)
+        {
+            <tr>
+                <td>@category.Text</td>
+            </tr>
+        }*@
+            @foreach (var category in Model.Categories)
             {
                 <tr>
-                    <td>@category.Text</td>
+                    <td>
+                        @*<select asp-for="Category.Idcategory" class="form-control"
+                            asp-items="@Model.CategoriesSelectList" name="CategoriesSelectList"></select>*@
+                        <button asp-page="Places/Index">@category.Name</button>
+                        <input type="hidden" asp-for="@category.Idcategory"/>
+                    </td>
                 </tr>
-            }*@
-            <tr>
-                <td>
-                    <select asp-for="Category.Idcategory" class="form-control" asp-items="@Model.CategoriesSelectList">
-                    </select>
-                </td>
-            </tr>
+            }
         </tbody>
     </table>
 </form>
