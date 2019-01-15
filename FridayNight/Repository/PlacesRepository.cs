@@ -29,7 +29,7 @@ namespace FridayNight.Repository
             return categories;
         }
 
-        public List<PlaceToGo> GetPlacesToGo(int CategoryId)
+        public List<PlaceToGo> GetPlacesToGo(int idCategory)
         {
             List<PlaceToGo> placesToGo = new List<PlaceToGo>();
 
@@ -37,7 +37,7 @@ namespace FridayNight.Repository
             {
                 var places = from p in context.PlaceToGo
                              join c in context.Category on p.CategoryId equals c.Idcategory
-                             where p.CategoryId == CategoryId
+                             where p.Category.Idcategory == idCategory
                              select p;
 
                 foreach(PlaceToGo place in places)
